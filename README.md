@@ -16,6 +16,7 @@ you're in the root directory of your project):
 
 ```sh
 cookiecutter https://github.com/Springerle/dh-virtualenv-mold.git
+dch -r "" # add a proper distro and date to the changelog
 ```
 
 It makes sense to `git add` the created directory directly afterwards, before any
