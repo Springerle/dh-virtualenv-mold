@@ -2,4 +2,4 @@
 
   * {{cookiecutter.package}}: Initial debian packaging
 
- --  {{cookiecutter.full_name}} <{{cookiecutter.email}}> Day, 01 Jan 2014 12:34:56 +0000
+ -- {{cookiecutter.full_name}} <{{cookiecutter.email}}> Day, 01 Jan 2014 12:34:56 +0000
