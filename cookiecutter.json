@@ -1,0 +1,12 @@
+{
+    "full_name": "Joe Schmoe"
+  , "email": "you@example.com"
+  , "url": "https://github.com/jschmoe/foobar"
+  , "package": "pyvenv-foobar"
+  , "version": "0.1.0"
+  , "distro": "UNRELEASED"
+  , "year": "2014"
+  , "short_description": "A Python package and its dependencies packaged up as DEB in an isolated virtualenv."
+  , "repo_name": "debian"
+  , "snake": "/usr/bin/python2"
+}
