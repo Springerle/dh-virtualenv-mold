@@ -7,6 +7,9 @@
 # sourcedir ".", because that includes the debian build stage,
 # and a recursive explosion ensues when symlinks are followed.
 
+# Increase trace logging, see debhelper(7) (uncomment to enable)
+#DH_VERBOSE=1
+
 DH_VENV_ARGS=--with python-virtualenv --setuptools --python {{cookiecutter.snake}} #-v
 
 clean:
