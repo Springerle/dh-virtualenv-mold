@@ -9,6 +9,12 @@ See [spotify/dh-virtualenv](https://github.com/spotify/dh-virtualenv) for more d
 ![Apache 2.0 licensed](http://img.shields.io/badge/license-Apache_2.0-red.svg)
 
 
+## Preparations
+
+In case you don't have the `cookiecutter` command line tool yet, here's
+[how to install](https://github.com/Springerle/springerle.github.io#installing-the-cookiecutter-cli) it.
+
+
 ## Using the template
 
 Adding this template to your existing Python project goes like this (make sure
