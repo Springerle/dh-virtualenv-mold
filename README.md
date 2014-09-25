@@ -1,6 +1,7 @@
 # dh-virtualenv-mold
 
-A cookiecutter template to add easy Debianization to any existing Python project.
+A [cookiecutter](http://cookiecutter.readthedocs.org/) template to
+add easy Debianization to any existing Python project.
 It creates a self-contained Python virtualenv wrapped into a Debian package
 (an "omnibus" package, all passengers on board).
 The packaged virtualenv is kept in sync with the host's interpreter automatically.
