@@ -1,6 +1,6 @@
 #! /bin/bash
 #
-# Run integrartion test suite.
+# Run integration test suite.
 #
 set -e
 
