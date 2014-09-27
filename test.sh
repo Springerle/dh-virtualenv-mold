@@ -47,5 +47,27 @@ echo "include README.rst" >MANIFEST.in # fix "cookiecutter-pypackage-minimal" bu
 
 # Build the package
 dpkg-buildpackage -uc -us -b
+cd ..
 
+# Check the package
+deb=$(ls -1 $prjname*.deb)
+while read i; do
+    dpkg-deb -c $deb | egrep "$i" >/dev/null || fail "DPKG content misses '$i'"
+done <<'EOF'
+/usr/share/python/dhvtst/bin/python
+lib/python[.0-9]+/site-packages/dhvtst/__init__
+EOF
+
+while read i; do
+    dpkg-deb -I $deb | egrep "$i" >/dev/null || fail "DPKG metadata misses '$i'"
+done <<'EOF'
+Package: dhvtst
+Homepage: https://github.com/jschmoe/foobar
+Description: A Python package
+EOF
+
+
+# Yay!
+echo
+echo "*** ALL OK ***"
 # end of integration test
