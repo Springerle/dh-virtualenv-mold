@@ -30,8 +30,8 @@ It makes sense to `git add` the created directory directly afterwards, before an
 generated files are added, that you don't want to have in your repository.
 
 Note that you need to install the usual Debian development tools and `dh-virtualenv`
-(at least version 0.8, unreleased at the time of this writing), before you can actually
-build the DEB package. These incantations will perform that for you:
+(at least version 0.8), before you can actually build the DEB package.
+These incantations will perform that for you:
 
 ```sh
 sudo apt-get install build-essential debhelper devscripts equivs
