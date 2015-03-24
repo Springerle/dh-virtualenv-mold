@@ -22,23 +22,40 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 """
+from __future__ import absolute_import, unicode_literals, print_function
+
+import io
 import os
 import sys
+import json
 import pprint
 
 DEBUG = False
 
 
 def get_context():
-    """Return conetxt as a dict."""
+    """Return context as a dict."""
     cookiecutter = None  # Make pylint happy
     return {{ cookiecutter | pprint }}
+
+
+def dump_context(context, filename):
+    """Dump JSON context to given file."""
+    with io.open(filename, 'w', encoding='ascii') as handle:
+        data = json.dumps(context, indent=4, sort_keys=True, ensure_ascii=True)
+        try:
+            data.decode
+        except AttributeError:
+            pass  # py3
+        else:
+            data.decode('ascii')
+        handle.write(data + '\n')
 
 
 def run():
     """Main loop."""
     context = get_context()
-    # sys.stderr.write("URL {}\n".format(context['url']))
+    dump_context(context, 'cookiecutter.json')
 
 
 if __name__ == '__main__':
