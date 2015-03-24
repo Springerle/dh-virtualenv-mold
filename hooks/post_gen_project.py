@@ -43,12 +43,6 @@ def dump_context(context, filename):
     """Dump JSON context to given file."""
     with io.open(filename, 'w', encoding='ascii') as handle:
         data = json.dumps(context, indent=4, sort_keys=True, ensure_ascii=True)
-        try:
-            data.decode
-        except AttributeError:
-            pass  # py3
-        else:
-            data.decode('ascii')
         handle.write(data + '\n')
 
 
