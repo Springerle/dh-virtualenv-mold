@@ -7,7 +7,8 @@ It creates a self-contained Python virtualenv wrapped into a Debian package
 The packaged virtualenv is kept in sync with the host's interpreter automatically.
 See [spotify/dh-virtualenv](https://github.com/spotify/dh-virtualenv) for more details.
 
-![Apache 2.0 licensed](http://img.shields.io/badge/license-Apache_2.0-red.svg)
+ [![Groups](https://img.shields.io/badge/Google_groups-springerle--users-orange.svg)](https://groups.google.com/forum/#!forum/springerle-users)
+ ![Apache 2.0 licensed](http://img.shields.io/badge/license-Apache_2.0-red.svg)
 
 
 ## Preparations
