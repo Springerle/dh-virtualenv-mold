@@ -27,6 +27,7 @@ cd "$workdir"
 ensure_tool "dh_virtualenv"
 ensure_tool "cookiecutter"
 python -c "assert ('0','8') <= tuple('$(dh_virtualenv --version | cut -f2 -d' ')'.split('.')), 'You need dh_virtualenv 0.8+'"
+test -f "$rootdir/README.mdd" || fail 'Use a full git clone!'
 
 # Create sample project (unattended)
 prjname="dhvtst"
