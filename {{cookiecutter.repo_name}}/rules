@@ -11,6 +11,7 @@
 #DH_VERBOSE=1
 
 DH_VENV_ARGS=--with python-virtualenv --setuptools --python {{cookiecutter.snake}} #-v
+EXTRA_REQUIREMENTS=""
 
 clean:
 	test ! -d dist || rm -rf dist
@@ -21,6 +22,7 @@ build-arch:
 	{{cookiecutter.snake}} setup.py sdist --formats tar
 	mkdir -p debian/sdist
 	tar -x -C debian/sdist --strip-components=1 --exclude '*.egg-info' -f dist/*.tar
+	echo $(EXTRA_REQUIREMENTS) | tr ' ,' '\n\n' >>debian/sdist/requirements.txt
 	dh $@ $(DH_VENV_ARGS) --sourcedir debian/sdist
 
 %:
