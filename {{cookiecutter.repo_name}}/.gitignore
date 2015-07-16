@@ -1,0 +1,4 @@
+{{cookiecutter.package}}.*.debhelper
+{{cookiecutter.package}}.substvars
+{{cookiecutter.package}}/
+files
