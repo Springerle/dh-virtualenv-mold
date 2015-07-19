@@ -49,3 +49,10 @@ The resulting package, if all went well, can be found in the parent of your proj
 You can upload it to a Debian package repository via e.g. `dput`, see
 [here](https://github.com/jhermann/artifactory-debian#package-uploading)
 for a hassle-free solution that works with Artifactory and Bintray.
+
+
+## Related Projects
+
+ * [make-deb](https://github.com/nylas/make-deb) – A simple tool that generates
+   a Debian configuration using dh-virtualenv,
+   based on your setuptools configuration and git history.
