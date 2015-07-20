@@ -3,6 +3,9 @@
 # processing (noawait)
 interest-noawait /usr/bin/python2.6
 interest-noawait /usr/bin/python2.7
+interest-noawait /usr/bin/python3.3
+interest-noawait /usr/bin/python3.4
+interest-noawait /usr/bin/python3.5
 
 # Also provide a symbolic trigger for all dh-virtualenv packages
 interest dh-virtualenv-interpreter-update
