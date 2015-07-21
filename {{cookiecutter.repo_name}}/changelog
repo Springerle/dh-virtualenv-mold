@@ -1,4 +1,4 @@
-{{cookiecutter.package}} ({{cookiecutter.version}}-1) {{cookiecutter.distro}}; urgency=low
+{{cookiecutter.package}} ({{cookiecutter.version}}) {{cookiecutter.distro}}; urgency=low
 
   * {{cookiecutter.package}}: Initial debian packaging
 
