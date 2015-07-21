@@ -1,4 +1,5 @@
 {{cookiecutter.package}}.*.debhelper
 {{cookiecutter.package}}.substvars
+{{cookiecutter.package}}/
 {{cookiecutter.package}}-*/
 files
