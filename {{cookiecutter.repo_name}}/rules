@@ -10,19 +10,23 @@
 # Increase trace logging, see debhelper(7) (uncomment to enable)
 #DH_VERBOSE=1
 
+SNAKE={{cookiecutter.snake}}
 EXTRA_REQUIREMENTS=--preinstall "setuptools>=17.1" --preinstall "pip>=7" --preinstall "wheel"
-DH_VENV_ARGS=--with python-virtualenv --setuptools --python {{cookiecutter.snake}} $(EXTRA_REQUIREMENTS) #-v
+DH_VENV_ARGS=--with python-virtualenv --setuptools --python $(SNAKE) $(EXTRA_REQUIREMENTS) #-v
+PACKAGE=$(shell dh_listpackages)
+VERSION=$(shell $(SNAKE) setup.py --version)
+SDIST_DIR=debian/$(PACKAGE)-$(VERSION)
 
 clean:
 	test ! -d dist || rm -rf dist
-	test ! -d debian/sdist || rm -rf debian/sdist
+	test ! -d $(SDIST_DIR) || rm -rf $(SDIST_DIR)
 	dh $@ $(DH_VENV_ARGS)
 
 build-arch:
-	{{cookiecutter.snake}} setup.py sdist --formats tar
-	mkdir -p debian/sdist
-	tar -x -C debian/sdist --strip-components=1 --exclude '*.egg-info' -f dist/*.tar
-	dh $@ $(DH_VENV_ARGS) --sourcedir debian/sdist
+	$(SNAKE) setup.py sdist --formats tar
+	mkdir -p $(SDIST_DIR)
+	tar -x -C $(SDIST_DIR) --strip-components=1 --exclude '*.egg-info' -f dist/*.tar
+	dh $@ $(DH_VENV_ARGS) --sourcedir $(SDIST_DIR)
 
 %:
-	dh $@ $(DH_VENV_ARGS) --sourcedir debian/sdist
+	dh $@ $(DH_VENV_ARGS) --sourcedir $(SDIST_DIR)
