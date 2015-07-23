@@ -6,6 +6,9 @@
 # using "sdist", else "pip" goes haywire when installing from
 # sourcedir ".", because that includes the debian build stage,
 # and a recursive explosion ensues when symlinks are followed.
+#
+# It also ensures your MANIFEST is complete and at least covers
+# all files needed for a release build.
 
 # Increase trace logging, see debhelper(7) (uncomment to enable)
 #DH_VERBOSE=1
