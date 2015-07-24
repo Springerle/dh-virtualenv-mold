@@ -1,1 +1,1 @@
-# usr/share/python/{{cookiecutter.package}}/bin/{{cookiecutter.package}} usr/bin/{{cookiecutter.package}}
+# opt/virtualenvs/{{cookiecutter.package}}/bin/{{cookiecutter.package}} usr/bin/{{cookiecutter.package}}

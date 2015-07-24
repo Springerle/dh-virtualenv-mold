@@ -13,6 +13,7 @@
 # Increase trace logging, see debhelper(7) (uncomment to enable)
 #DH_VERBOSE=1
 
+export DH_VIRTUALENV_INSTALL_ROOT=/opt/virtualenvs
 SNAKE={{cookiecutter.snake}}
 EXTRA_REQUIREMENTS=--preinstall "setuptools>=17.1" --preinstall "pip>=7" --preinstall "wheel"
 DH_VENV_ARGS=--with python-virtualenv --setuptools --python $(SNAKE) $(EXTRA_REQUIREMENTS) #-v
