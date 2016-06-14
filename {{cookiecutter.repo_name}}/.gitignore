@@ -3,3 +3,4 @@
 {{cookiecutter.package}}/
 {{cookiecutter.package}}-*/
 files
+debhelper-build-stamp
