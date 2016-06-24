@@ -2,7 +2,7 @@ Source: {{cookiecutter.package}}
 Section: contrib/python
 Priority: extra
 Maintainer: {{cookiecutter.full_name}} <{{cookiecutter.email}}>
-Build-Depends: debhelper (>= 9), python, dh-virtualenv (>= 0.10), tar
+Build-Depends: debhelper (>= 9), python, python-dev, dh-virtualenv (>= 0.10), tar
 Standards-Version: 3.9.5
 Homepage: {{cookiecutter.url}}
 
