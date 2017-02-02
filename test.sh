@@ -34,7 +34,7 @@ prjname="dhvtst"
 rm -rf "$workdir/"*cookiecutter* 2>/dev/null || :
 test ! -d "$prjname" || rm -rf "$prjname"
 git clone "https://github.com/borntyping/cookiecutter-pypackage-minimal.git"
-sed -r -i -e "s/cookiecutter-pypackage-minimal/$prjname/" "$workdir/cookiecutter-pypackage-minimal/cookiecutter.json"
+sed -r -i -e "s/cookiecutter.pypackage.minimal/$prjname/" "$workdir/cookiecutter-pypackage-minimal/cookiecutter.json"
 cookiecutter --no-input "cookiecutter-pypackage-minimal/"
 echo
 
