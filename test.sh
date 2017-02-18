@@ -26,7 +26,7 @@ cd "$workdir"
 # Fail fast for some obvious errors
 ensure_tool "dh_virtualenv"
 ensure_tool "cookiecutter"
-python -c "assert ('0','8') <= tuple('$(dh_virtualenv --version | cut -f2 -d' ')'.split('.')), 'You need dh_virtualenv 0.8+'"
+python -c "assert (0, 8) <= tuple(int(i) for i in '$(dh_virtualenv --version | cut -f2 -d' ')'.split('.')), 'You need dh_virtualenv 0.8+'"
 test -f "$rootdir/README.md" || fail 'Use a full git clone!'
 
 # Create sample project (unattended)
