@@ -15,7 +15,7 @@
 
 export DH_VIRTUALENV_INSTALL_ROOT=/opt/venvs
 SNAKE={{cookiecutter.snake}}
-EXTRA_REQUIREMENTS=--preinstall "setuptools>=17.1" --preinstall "pip>=7" --preinstall "wheel" --preinstall "no-manylinux1"
+EXTRA_REQUIREMENTS=--preinstall "setuptools>=17.1,<34" --preinstall "pip>=7" --preinstall "wheel" --preinstall "no-manylinux1"
 DH_VENV_ARGS=--with python-virtualenv --setuptools --python $(SNAKE) $(EXTRA_REQUIREMENTS) #-v
 PACKAGE=$(shell dh_listpackages)
 VERSION=$(shell $(SNAKE) setup.py --version)
