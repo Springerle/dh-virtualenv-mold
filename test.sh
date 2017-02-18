@@ -55,7 +55,7 @@ deb=$(ls -1 $prjname*.deb)
 while read i; do
     dpkg-deb -c $deb | egrep "$i" >/dev/null || fail "DPKG content misses '$i'"
 done <<'EOF'
-/opt/virtualenvs/dhvtst/bin/python
+/opt/venvs/dhvtst/bin/python
 lib/python[.0-9]+/site-packages/dhvtst/__init__
 EOF
 
