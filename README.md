@@ -56,6 +56,23 @@ You can upload it to a Debian package repository via e.g. `dput`, see
 for a hassle-free solution that works with Artifactory and Bintray.
 
 
+## Trouble-Shooting
+
+### 'pkg-resources not found' or similar during virtualenv creation
+
+If you get errors regarding ``pkg-resources`` during the virtualenv creation,
+update your build machine's ``pip`` and ``virtualenv``.
+The versions on many distros are just too old to handle current infrastructure (especially PyPI).
+
+This is the one exception to “never sudo pip”, so go ahead and do this:
+
+```sh
+sudo pip install -U pip virtualenv
+```
+
+Then try building the package again.
+
+
 ## Related Projects
 
  * [make-deb](https://github.com/nylas/make-deb) – A simple tool that generates
