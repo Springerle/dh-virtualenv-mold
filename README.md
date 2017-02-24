@@ -10,6 +10,11 @@ See [spotify/dh-virtualenv](https://github.com/spotify/dh-virtualenv) for more d
  [![Groups](https://img.shields.io/badge/Google_groups-springerle--users-orange.svg)](https://groups.google.com/forum/#!forum/springerle-users)
  ![Apache 2.0 licensed](http://img.shields.io/badge/license-Apache_2.0-red.svg)
 
+The similar [debianized-pypi-mold](https://github.com/Springerle/debianized-pypi-mold)
+creates a project to make a Debian package from any existing PyPI release.
+It fits when you just want to package a 3rd party release.
+If you plan to contribute Debian packaging to upstream instead, use this template.
+
 
 ## Preparations
 
