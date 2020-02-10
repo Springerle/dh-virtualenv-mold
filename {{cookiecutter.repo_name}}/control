@@ -2,13 +2,13 @@ Source: {{cookiecutter.package}}
 Section: contrib/python
 Priority: extra
 Maintainer: {{cookiecutter.full_name}} <{{cookiecutter.email}}>
-Build-Depends: debhelper (>= 9), python, python-dev, dh-virtualenv (>= 0.10), tar
+Build-Depends: debhelper (>= 9), python3, python3-venv, python3-dev, dh-virtualenv (>= 1.1), tar
 Standards-Version: 3.9.5
 Homepage: {{cookiecutter.url}}
 
 Package: {{cookiecutter.package}}
 Architecture: any
-Pre-Depends: dpkg (>= 1.16.1), python2.7 | python3, ${misc:Pre-Depends}
+Pre-Depends: dpkg (>= 1.16.1), python3, python3-venv, ${misc:Pre-Depends}
 Depends: ${python:Depends}, ${misc:Depends}
 Description: {{cookiecutter.short_description}}
     .
