@@ -16,7 +16,7 @@
 export DH_VIRTUALENV_INSTALL_ROOT=/opt/venvs
 SNAKE={{cookiecutter.snake}}
 EXTRA_REQUIREMENTS=--upgrade-pip --preinstall "setuptools>=38" --preinstall "wheel"
-DH_VENV_ARGS=--with python-virtualenv --setuptools --builtin-venv --python=$(SNAKE) $(EXTRA_REQUIREMENTS) \
+DH_VENV_ARGS=--setuptools --builtin-venv --python=$(SNAKE) $(EXTRA_REQUIREMENTS) \
             --extra-pip-arg=--progress-bar=pretty
             # --extra-pip-arg "--no-binary=psycopg2" \
             # -v
@@ -25,7 +25,8 @@ VERSION=$(shell $(SNAKE) setup.py --version)
 SDIST_DIR=debian/$(PACKAGE)-$(VERSION)
 
 
-.PHONY: clean build-arch
+.PHONY: clean build-arch override_dh_virtualenv override_dh_strip
+	# override_dh_shlibdeps
 
 clean:
 	test ! -d dist || rm -rf dist
@@ -39,4 +40,13 @@ build-arch:
 	dh $@ $(DH_VENV_ARGS) --sourcedir $(SDIST_DIR)
 
 %:
-	dh $@ $(DH_VENV_ARGS) --sourcedir $(SDIST_DIR)
+	dh $@ --with python-virtualenv --sourcedir $(SDIST_DIR)
+
+override_dh_virtualenv:
+	dh_virtualenv $(DH_VENV_ARGS)
+
+override_dh_strip:
+	dh_strip --exclude=cffi --exclude=_imaging
+
+#override_dh_shlibdeps:
+#	dh_shlibdeps -X/x86/ -X/Cython/ -X/PIL/ -X/psycopg2/ -X/_yaml
