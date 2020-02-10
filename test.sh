@@ -26,7 +26,7 @@ cd "$workdir"
 # Fail fast for some obvious errors
 ensure_tool "dh_virtualenv"
 ensure_tool "cookiecutter"
-python -c "assert (0, 8) <= tuple(int(i) for i in '$(dh_virtualenv --version | cut -f2 -d' ')'.split('.')), 'You need dh_virtualenv 0.8+'"
+python3 -c "assert (1, 1) <= tuple(int(i) for i in '$(dh_virtualenv --version | cut -f2 -d' ')'.split('.')), 'You need dh_virtualenv 1.1+'"
 test -f "$rootdir/README.md" || fail 'Use a full git clone!'
 
 # Create sample project (unattended)
@@ -55,7 +55,7 @@ deb=$(ls -1 $prjname*.deb)
 while read i; do
     dpkg-deb -c $deb | egrep "$i" >/dev/null || fail "DPKG content misses '$i'"
 done <<'EOF'
-/opt/venvs/dhvtst/bin/python
+/opt/venvs/dhvtst/bin/python3
 lib/python[.0-9]+/site-packages/dhvtst/__init__
 EOF
 
